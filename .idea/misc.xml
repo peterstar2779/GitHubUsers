@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/peter/AndroidStudioProjects/GitHubUsers/app/src/main/res/layout/activity_main.xml" value="0.17617753623188406" />
+        <entry key="..\:/Users/peter/AndroidStudioProjects/GitHubUsers/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/peter/AndroidStudioProjects/GitHubUsers/app/src/main/res/layout/activity_main_f.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/peter/AndroidStudioProjects/GitHubUsers/app/src/main/res/layout/item.xml" value="0.5" />
+        <entry key="..\:/Users/peter/AndroidStudioProjects/GitHubUsers/app/src/main/res/layout/userdetail_fragment.xml" value="0.1953125" />
+        <entry key="..\:/Users/peter/AndroidStudioProjects/GitHubUsers/app/src/main/res/layout/userlist_fragment.xml" value="0.22395833333333334" />
+        <entry key="..\:/Users/peter/AppData/Local/Android/Sdk/platforms/android-32/data/res/drawable/btn_dialog.xml" value="0.198" />
       </map>
     </option>
   </component>
