@@ -1,11 +1,8 @@
-package com.example.githubusers
+package com.example.githubusers.mode
 
 import retrofit2.Call
-import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.POST
 import retrofit2.http.Path
-
 
 interface ApiService {
     @GET("/users")

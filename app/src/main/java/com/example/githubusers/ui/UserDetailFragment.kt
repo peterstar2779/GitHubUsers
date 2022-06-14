@@ -8,14 +8,17 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubusers.*
-import com.example.githubusers.Config.userName
+import com.example.githubusers.mode.Config.userName
+import com.example.githubusers.mode.ApiService
+import com.example.githubusers.api.AppClientManager
+import com.example.githubusers.mode.Posts
+import com.example.githubusers.api.UserDataAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,8 +26,7 @@ import java.net.URL
 import java.util.concurrent.Executors
 
 
-class UserDetailFragment() : Fragment() {
-
+class UserDetailFragment : Fragment() {
 
     companion object {
         fun newInstance() = UserListFragment()
@@ -35,8 +37,9 @@ class UserDetailFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val view: View = inflater!!.inflate(R.layout.userdetail_fragment, container, false)
-        val previous : Button = view.findViewById(R.id.previous)
+        val previous : TextView = view.findViewById(R.id.previous)
         val avatarImage : ImageView = view.findViewById(R.id.avatarImage)
+        var bioTextView : TextView = view.findViewById(R.id.bio)
         val userNameTextView : TextView = view.findViewById(R.id.userNameTextView)
         previous.setOnClickListener(){
             (activity as MainActivity).switchFragment(1)
@@ -65,11 +68,18 @@ class UserDetailFragment() : Fragment() {
                             e.printStackTrace()
                         }//catch
                     }//executor
-                    userNameTextView.setText("${list.twitterUsername}")
-                    listData.add("${list.login}")
-                    listData.add("${list.location}")
-                    listData.add("${list.blog}")
-                }
+                    var name = "" ; var bio = "" ; var login = "" ; var location = "" ; var blog = ""
+                    if(list.name!=null) name = "${list.name}"
+                    if(list.bio!=null) bio = "${list.bio}"
+                    if(list.login!=null) login = "${list.login}"
+                    if(list.location!=null) location = "${list.location}"
+                    if(list.blog!=null) blog = "${list.blog}"
+                    userNameTextView.setText(name)
+                    bioTextView.setText(bio)
+                    listData.add(login)
+                    listData.add(location)
+                    listData.add(blog)
+                }//if
 
                 val layoutManager = LinearLayoutManager(context)
                 layoutManager.orientation = LinearLayoutManager.VERTICAL

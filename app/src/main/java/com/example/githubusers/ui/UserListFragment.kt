@@ -8,14 +8,16 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubusers.*
+import com.example.githubusers.mode.ApiService
+import com.example.githubusers.api.AppClientManager
+import com.example.githubusers.api.DataAdapter
+import com.example.githubusers.mode.Posts
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.ArrayList
 
 class UserListFragment : Fragment() {
-
-
 
     companion object {
         fun newInstance() = UserListFragment()
@@ -37,14 +39,14 @@ class UserListFragment : Fragment() {
                 val listData = ArrayList<String>()
                 for (p in list!!) {
                     if(index<list.size) {
-                        sb.append(p.login + ",")
+                        sb.append(p.login + "," + p.avatarUrl + "@@")
                     }else {
-                        sb.append(p.login)
+                        sb.append(p.login + "," + p.avatarUrl )
                     }//else
                     index++
                 }//for p
 
-                val userArray = sb.toString().split(",")
+                val userArray = sb.toString().split("@@")
                 for(i in userArray.indices){
                     listData.add(userArray[i])
                 }//for i

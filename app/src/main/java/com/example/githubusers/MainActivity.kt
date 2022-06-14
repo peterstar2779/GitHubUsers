@@ -1,16 +1,13 @@
 package com.example.githubusers
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.githubusers.Config.mainActivityContext
+import com.example.githubusers.mode.Config.mainActivityContext
 import com.example.githubusers.ui.UserDetailFragment
 import com.example.githubusers.ui.UserListFragment
 
 
 class MainActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

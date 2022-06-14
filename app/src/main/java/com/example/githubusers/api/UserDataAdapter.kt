@@ -1,4 +1,4 @@
-package com.example.githubusers
+package com.example.githubusers.api
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.githubusers.R
 
 class UserDataAdapter(private val mData: List<String>) : RecyclerView.Adapter<ViewHolderUser>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderUser {
-        val v = LayoutInflater.from(parent.context).inflate(com.example.githubusers.R.layout.item, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         return ViewHolderUser(v)
     }
 
@@ -27,6 +28,6 @@ class UserDataAdapter(private val mData: List<String>) : RecyclerView.Adapter<Vi
 }
 
 class ViewHolderUser(v: View) : RecyclerView.ViewHolder(v) {
-    val dataView: TextView = v.findViewById(com.example.githubusers.R.id.info_text)
-    val img : ImageView = v.findViewById(com.example.githubusers.R.id.img)
+    val dataView: TextView = v.findViewById(R.id.info_text)
+    val img : ImageView = v.findViewById(R.id.img)
 }

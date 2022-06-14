@@ -1,6 +1,7 @@
-package com.example.githubusers
+package com.example.githubusers.api
 
 import android.util.Log
+import com.example.githubusers.mode.Config
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

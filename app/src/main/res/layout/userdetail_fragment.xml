@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <TextView
         android:id="@+id/previous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Previous"
+        android:text="  X  "
+        android:textColor="#6C6C6C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <ImageView
         android:id="@+id/avatarImage"
@@ -28,24 +29,48 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/user_detail"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameTextView"
-        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/avatarImage" />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#E0E0E0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bio" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        app:layout_constraintVertical_bias="0.1" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

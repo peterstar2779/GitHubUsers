@@ -1,4 +1,4 @@
-package com.example.githubusers
+package com.example.githubusers.mode
 
 import com.google.gson.annotations.SerializedName
 
@@ -15,5 +15,6 @@ class Posts {
     var blog: String? = null
     @SerializedName("avatar_url")
     var avatarUrl: String? = null
-
+    @SerializedName("bio")
+    var bio: String? = null
 }//Posts
